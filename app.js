@@ -17,6 +17,7 @@ app.use(express.static('./'));
 
 
 io.on('connection', function (socket) {
+
   socket.on('create', function (data) {
     console.log("rrrrrrrrr.F.F.F.F.F.")
     socket.join(data.channel)
@@ -66,7 +67,7 @@ io.on('connection', function (socket) {
   socket.on("login_register", function (data) {
     const pseudo = data.pseudo;
     socket.nickname = pseudo
-    socket.emit("logged_in", { pseudoName: pseudo });
+    socket.emit("logged_in", { validate: true });
     console.log("after save")
   });
 })
