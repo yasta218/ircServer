@@ -26,6 +26,7 @@
             $("#listUser").click(function(){
                 console.log("listUser émis")
                 socket.emit("users",{channel: "1er"})
+                socket.emit("listMessages",{channel: "1er"})
             })
             $("#connectChan").click(function(){
                 console.log("demande de co  au channel")
